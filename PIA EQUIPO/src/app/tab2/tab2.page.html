@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      <img 	width="25" src="../../assets/IMAGENES/LOGO/logo simplificado.jpeg">  DESCUBRE TU PROXIMA SALIDA
+      <img 	width="25" src="../../assets/IMAGENES/LOGO/logo simplificado.png">  DESCUBRE TU PROXIMA SALIDA
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,6 +12,33 @@
       <ion-title size="large"><img 	width="25" src="../../assets/IMAGENES/LOGO/logo simplificado.png">  DESCUBRE TU PROXIMA SALIDA</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ingresar Datos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Nombre del restaurante</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">URL de la imagen</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Rating</ion-label>
+        <ion-input type="number" min="0" max="5" step="0.5"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Comentario</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botón agregado -->
+  <ion-button expand="full">Enviar</ion-button>
 
   <ion-card>
     <img alt="Pollo Loco" src="../../assets/IMAGENES/RESTAURANTES/polloloco.jpg" />
@@ -80,7 +107,7 @@ Ambiente familiar.
   </ion-card>
 
   <ion-card>
-    <img alt="Panem" src="../../assets/IMAGENES/RESTAURANTES/panem.jpg"/>
+    <img alt="Panem" src="../../assets/IMAGENES/RESTAURANTES/panem.jpg" />
     <ion-card-header>
       <ion-card-title>Panem Bakery</ion-card-title>
       <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
