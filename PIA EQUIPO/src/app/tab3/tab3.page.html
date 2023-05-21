@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      <img 	width="25" src="../../assets/IMAGENES/LOGO/logo simplificado.png">  REGISTRO
+      <img 	width="25" src="../../assets/IMAGENES/LOGO/logo simplificado.jpeg">  Inicio de Sesion
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,31 +9,41 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large"><img 	width="25" src="../../assets/IMAGENES/LOGO/logo simplificado.png">  REGISTRO</ion-title>
+      <ion-title size="large"><img 	width="25" src="../../assets/IMAGENES/LOGO/logo simplificado.jpeg">  Inicio de Sesion</ion-title>
     </ion-toolbar>
   </ion-header>
   <p ALIGN="center">
     
-    <ion-item>
-      <ion-label floating>Correo:</ion-label>
-      <ion-input type="email"
-      errorText="Correo Invalido"
-      required
-      ngModel 
-      email>
-    </ion-input>
-    </ion-item>
-    <ion-item>
+    <div *ngIf="!isLoggedIn">
+      <ion-item>
+        <ion-label floating>Correo:</ion-label>
+        <ion-input type="email"
+          name="email"
+          error-message="Correo Inválido"
+          required
+          [(ngModel)]="email"
+        ></ion-input>
+      </ion-item>
+      
+      <ion-item>
         <ion-label floating>Contraseña:</ion-label>
         <ion-input type="password"
-        errorText="Contraseña Invalida"
-        minlength="6" required
-        ngModel
-        password
+          name="password"
+          error-message="Contraseña Inválida"
+          minlength="6" required
+          [(ngModel)]="password"
         ></ion-input>
-    </ion-item>
-    <small id="Contraseña-help">La contraseña debe tener al menos 6 caracteres.</small>
-    <br>
-    <ion-button color="success">Registrarse</ion-button>
-  </p>
+      </ion-item>
+      
+      
+      <small id="Contraseña-help">La contraseña debe tener al menos 6 caracteres.</small>
+      <br>
+      <ion-button color="success" (click)="login()">Iniciar Sesion</ion-button>
+    </div>
+
+    <div *ngIf="isLoggedIn">
+      <h1>Correo electrónico: mauricio23@gmail.com</h1>
+      <ion-button color="primary" (click)="logout()">Logout</ion-button>
+    </div>
+
 </ion-content>
